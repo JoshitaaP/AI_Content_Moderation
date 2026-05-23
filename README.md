@@ -36,6 +36,10 @@ pip install -r requirements.txt
 python api.py
 ```
 
+## Demo Video
+
+[Watch Demo Video](YOUR_GOOGLE_DRIVE_LINK)
+
 ## Future Improvements
 - Deep learning moderation
 - Real-time dashboard
