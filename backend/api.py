@@ -9,10 +9,10 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 #LOAD MODEL
-with open("models/model.pkl", "rb") as f:
+with open("../models/model.pkl", "rb") as f:
     model = pickle.load(f)
 
-with open("models/vectorizer.pkl", "rb") as f:
+with open("../models/vectorizer.pkl", "rb") as f:
     vectorizer = pickle.load(f)
 
 #PREDICT FUNCTION
