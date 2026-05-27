@@ -1,18 +1,24 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pickle
+import os
 
 #APP SETUP
 app = Flask(__name__)
 
-#  Enable CORS for everything (IMPORTANT)
+# Enable CORS for everything (IMPORTANT)
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 #LOAD MODEL
-with open("../models/model.pkl", "rb") as f:
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+model_path = os.path.join(BASE_DIR, "models", "model.pkl")
+vectorizer_path = os.path.join(BASE_DIR, "models", "vectorizer.pkl")
+
+with open(model_path, "rb") as f:
     model = pickle.load(f)
 
-with open("../models/vectorizer.pkl", "rb") as f:
+with open(vectorizer_path, "rb") as f:
     vectorizer = pickle.load(f)
 
 #PREDICT FUNCTION
