@@ -32,7 +32,7 @@ if (window.aiModeratorLoaded) {
         parent.dataset.checked = "true";
 
         try {
-            let response = await fetch("http://127.0.0.1:5000/moderate", {
+            let response = await fetch("https://ai-content-moderation-5kkf.onrender.com/moderate", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
